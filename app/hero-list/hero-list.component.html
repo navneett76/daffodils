@@ -1,0 +1,57 @@
+<main id="main">
+ <section id="about" class="section-bg">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				
+				<div class="container" >
+
+					<h3 *ngIf="isLoading"><i>Loading heroes ... </i></h3>
+					<h3 *ngIf="!isLoading">Select a hero:</h3>
+					
+				  <button (click)="getHeroes()" class="btn btn-primary">Refresh</button>
+					
+					<nav>
+						<div class="row border" *ngFor="let hero of heroes | async" >
+							<div class="col-sm-2" >{{hero.id}}</div>
+							<div class="col-sm-2" >{{hero.name}}</div>
+							<div class="col-sm-6" *ngIf="hero.addresses?.length > 0;else other_content"  >
+								<ul *ngFor="let address of hero.addresses" >
+									<li>{{address.street}} City: {{address.city}}, State: {{address.state}}, Zip: {{address.zip}}</li> 
+								</ul>
+							</div>
+							<ng-template #other_content>
+								<div class="col-sm-6" >
+									<ul >
+										<li>other content here...</li>
+									</ul>
+								</div>
+							</ng-template>
+							<div class="col-sm-2"  >
+								<span (click)="select(hero)" >Edit</span>
+							</div>
+						</div>
+					</nav>
+
+				</div>
+
+			</div>
+			<div class="col-sm-6">
+				
+					<div *ngIf="selectedHero">
+					  <hr>
+					  <h2>Hero Detail</h2>
+					  <h3>Editing: {{selectedHero.name}}</h3>
+					  <app-hero-detail [hero]="selectedHero">
+						This is for testing the directives
+					  </app-hero-detail>
+					</div>
+
+			</div>
+		</div>
+	</div>
+
+
+</section>
+</main>

@@ -1,0 +1,44 @@
+    <div class="col-md-12 bordertop" >
+		<h3 >User List</h3>
+		<table cellpadding="10px" cellspacing="10px" style="border-spacing: 5px; border-spacing: 5px 1rem;" border="1px" >
+		<tr border="1" >
+			<td colspan="5">
+				<form id="filter">
+					<input type="text" placeholder="Search" name="search" [(ngModel)]="search">
+				</form>
+				
+				<!-- <button class="btn button" (click)="searchUser();">Go</button> -->
+			</td>
+		</tr>
+		<tr border="1" >
+			<td>ID</td>
+			<td>First Name</td>
+			<td>Last Name</td>
+			<td>Address </td>
+			<td>Roll no</td>
+		</tr>
+		
+		<tr border="1"  *ngFor="let user of users|filter:search ">  
+			<td><a [routerLink]="['/user', user.id]" >{{user.id  }}</a></td>
+			<td>{{user.Userfirstname | uppercase }}</td>
+			<td>{{user.Userlastname | uppercase }}</td>
+			<td>{{user.address  }}</td>
+			<td>{{user.rollno | uppercase }}</td>
+		</tr>
+		<tr *ngIf="users.length==0">
+			<td colspan="5">{{errorMsg}}</td>
+		</tr>
+		<tr *ngIf="users.length==0">
+			<td colspan="5">
+				<!-- <ngx-paginate
+				  [page]="page"
+				  [options]="options"
+				  (pageChange)='setPage($event)'>
+				</ngx-paginate> -->
+
+			</td>
+		</tr>
+
+		<!-- | filter:search -->
+		</table>
+	</div>

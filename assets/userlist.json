@@ -1,0 +1,88 @@
+[{
+   "id": 1,
+   "Userfirstname": "Navneet",
+   "Userlastname": "Tiwari",
+   "address": "Chitrakoot",
+   "rollno": "11301",
+   "password": "11301"
+},
+{
+   "id": 2,
+   "Userfirstname": "Ramesh",
+   "Userlastname": "Singh",
+   "address": "Baliya",
+   "rollno": "11302",
+   "password": "11302"
+},
+{
+   "id": 3,
+   "Userfirstname": "Jeevan",
+   "Userlastname": "Yadav",
+   "address": "Sumerpur",
+   "rollno": "11303",
+   "password": "11303"
+},
+{
+   "id": 4,
+   "Userfirstname": "Putin",
+   "Userlastname": "Raj",
+   "address": "Kanpur",
+   "rollno": "11304",
+   "password": "11304"
+},
+{
+   "id": 5,
+   "Userfirstname": "Bhola",
+   "Userlastname": "Mahi",
+   "address": "Lucknow",
+   "rollno": "11305",
+   "password": "11305"
+},
+{
+   "id": 6,
+   "Userfirstname": "Rakesh",
+   "Userlastname": "Yadav",
+   "address": "Sumerpur",
+   "rollno": "11306",
+   "password": "11306"
+},
+{
+   "id": 7,
+   "Userfirstname": "Shubham",
+   "Userlastname": "Raj",
+   "address": "Kanpur",
+   "rollno": "11307",
+   "password": "11307"
+},
+{
+   "id": 8,
+   "Userfirstname": "Bhuwan",
+   "Userlastname": "Yadav",
+   "address": "Lucknow",
+   "rollno": "11308",
+   "password": "11308"
+},
+{
+   "id": 9,
+   "Userfirstname": "Jeevan",
+   "Userlastname": "Firangi",
+   "address": "Dallupura",
+   "rollno": "11309",
+   "password": "11309"
+},
+{
+   "id": 10,
+   "Userfirstname": "Bhrambha",
+   "Userlastname": "Ji",
+   "address": "Kanpur",
+   "rollno": "11310",
+   "password": "11310"
+},
+{
+   "id": 11,
+   "Userfirstname": "Bholu",
+   "Userlastname": "Bania",
+   "address": "Lucknow",
+   "rollno": "11311",
+   "password": "11311"
+}]

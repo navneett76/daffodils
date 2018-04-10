@@ -1,0 +1,112 @@
+<div class="container" *ngIf="(userdata | json) != '{}'">  
+
+    <div class="sidebar" data-color="orange">
+  
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+        <div class="logo">
+            <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+                AD
+            </a>
+            <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                ADMIN DASHBOARD
+            </a>
+        </div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li routerLinkActive="active">
+                    <a [routerLink] = "['/home']">
+                        <i class="now-ui-icons design_app"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li routerLinkActive="active">
+                    <a [routerLink] = "['/login']">
+                        <i class="now-ui-icons text_caps-small"></i>
+                        <p>Login / Registration</p>
+                    </a>
+                </li>
+                <li routerLinkActive="active">
+                    <a [routerLink] = "['/about']">
+                        <i class="now-ui-icons fas fa-user"></i>
+                        <p>About</p>
+                    </a>
+                </li>					
+                <li routerLinkActive="active">
+                    <a [routerLink] = "['/users']">
+                        <i class="now-ui-icons users_single-02"></i>
+                        <p>User Profile1</p>
+                    </a>
+                </li>
+                <li routerLinkActive="active">
+                    <a [routerLink] = "['/collection']">
+                        <i class="now-ui-icons education_atom"></i>
+                        <p>collection</p>
+                    </a>
+                </li>
+                <li routerLinkActive="active">
+                    <a [routerLink] = "['/market']">
+                        <i class="now-ui-icons location_map-big"></i>
+                        <p>Market</p>
+                    </a>
+                </li>
+                <li routerLinkActive="active">
+                    <a [routerLink] = "['/reacontactus']">
+                        <i class="now-ui-icons text_caps-small"></i>
+                        <p>Reactive Contact us</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  
+    <!--==========================
+      Reactive form section
+    ============================-->
+	<div class="main-panel">
+        <h1>{{title}}</h1>
+		<router-outlet></router-outlet> 
+        
+	</div>
+</div>
+<div class="container login-container" *ngIf="(userdata | json) == '{}'">  <!-- *ngIf="empty(userdata)" -->
+    <div class="row">
+        <div class="login justify-content-center">
+            <router-outlet></router-outlet> 
+        </div>
+
+    </div>
+
+</div>
+<footer class="footer">
+    <div class="container-fluid">
+        <nav>
+            <ul>
+                <li>
+                    <a href="https://www.creative-tim.com">
+                        Creative Tim
+                    </a>
+                </li>
+                <li>
+                    <a href="http://presentation.creative-tim.com">
+                        About Us
+                    </a>
+                </li>
+                <li>
+                    <a href="http://blog.creative-tim.com">
+                        Blog
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script>, Designed by
+            <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
+            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+        </div>
+    </div>
+</footer>

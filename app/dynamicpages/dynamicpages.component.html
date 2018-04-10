@@ -1,0 +1,25 @@
+    <div class="col-md-12 bordertop" >
+		<h3 >User Data</h3>
+		<table cellpadding="10px" cellspacing="10px" style="border-spacing: 5px; border-spacing: 5px 1rem;" border="1px" >
+		<tr border="1" >
+			<td>ID</td>
+			<td>First Name</td>
+			<td>Last Name</td>
+			<td>Address </td>
+			<td>Roll no</td>
+		</tr>
+		
+		<tr border="1"  *ngFor="let user of userData "> 
+			<td>{{user.id  }}</td>
+			<td>{{user.Userfirstname | uppercase }}</td>
+			<td>{{user.Userlastname | uppercase }}</td>
+			<td>{{user.address  }}</td>
+			<td>{{user.rollno | uppercase }}</td>
+		</tr>
+		<tr *ngIf="userData.length==0">
+			<td colspan="5">{{errorMsg}}</td>
+		</tr>
+
+		<!-- | filter:search -->
+		</table>
+	</div>

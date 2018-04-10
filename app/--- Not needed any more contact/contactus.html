@@ -1,0 +1,145 @@
+<main id="main">
+
+    <!--==========================
+      Reactive form section
+    ============================-->
+    <section id="about" class="section-bg">
+
+<!-- <form #myForm="ngForm" (ngSubmit)="onSubmit();">
+	<table width="450px">
+		<tr>
+			<td valign="top">
+			<label for="first_name">First Name *</label>
+			</td>
+			<td valign="top">
+			<input  type="text" name="first_name" maxlength="50" size="30" 
+				placeholder="FirstName" ngModel="" required
+			/>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<label for="last_name">Last Name *</label>
+			</td>
+			<td valign="top">
+			<input  type="text" name="last_name" maxlength="50" size="30" 
+				placeholder="LastName" ngModel="" required
+			/>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<label for="email">Email Address *</label>
+			</td>
+			<td valign="top">
+			<input  type="text" name="email" maxlength="80" size="30"
+				placeholder="Email" ngModel="" required
+				/>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<label for="telephone">Telephone Number</label>
+			</td>
+			<td valign="top">
+			<input  type="text" name="telephone" maxlength="30" size="30"
+			placeholder="Telephone" ngModel="" required
+			>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<label for="comments">Comments *</label>
+			</td>
+			<td valign="top">
+			<textarea  name="comments" maxlength="1000" cols="25" rows="6"
+			placeholder="Comment" ngModel="" required
+			></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<button type="submit">Submit </button>
+			</td>
+		</tr>
+	</table>
+</form>
+
+<div class="result" >
+{{ model.name }}
+</div>
+ -->
+<button (click)="myInsert()">Click Me</button>
+ <div class="container">
+  <div [hidden]="submitted">
+    <h1>Hero Form</h1>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name"
+               required
+               [(ngModel)]="model.name" name="name"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="alterEgo">Alter Ego</label>
+        <input type="text" class="form-control" id="alterEgo"
+               [(ngModel)]="model.alterEgo" name="alterEgo">
+      </div>
+
+      <div class="form-group">
+        <label for="power">Hero Power</label>
+        <select class="form-control" id="power"
+                required
+                [(ngModel)]="model.power" name="power"
+                #power="ngModel">
+          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+      <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
+      <i>with</i> reset
+
+      &nbsp;&nbsp;
+      <button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
+      <i>without</i> reset
+
+     <!-- NOT SHOWN IN DOCS -->
+      <div>
+        <hr>
+        Name via form.controls = {{showFormControls(heroForm)}}
+      </div>
+     <!-- - -->
+    </form>
+  </div>
+  
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">Name</div>
+      <div class="col-xs-9  pull-left">{{ model.name }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Alter Ego</div>
+      <div class="col-xs-9 pull-left">{{ model.alterEgo }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Power</div>
+      <div class="col-xs-9 pull-left">{{ model.power }}</div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+  </div>
+  </div>
+  
+ </section>
+</main>
