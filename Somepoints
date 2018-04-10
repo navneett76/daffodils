@@ -1,0 +1,17 @@
+Testing: 
+
+Karma: 
+Karma is a tool which lets us spawn browsers and run jasmine tests inside of them all from the command line. The results of the tests are also displayed on the command line.
+
+Karma can also watch your development files for changes and re-run the tests automatically.
+
+Karma lets us run jasmine tests as part of a development tool chain which requires tests to be runnable and results inspectable via the command line.
+
+-- async will allow the next test not to start until the async finishes all it's tasks. What async does is wrap the callback in a Zone, where all asynchronous tasks (e.g. setTimeout) are tracked. Once all the asynchronous tasks are complete, then the async completes.
+
+
+
+https://www.youtube.com/watch?v=psTOlej9Rpk
+https://www.youtube.com/watch?v=CWXQ031jDe8
+https://www.youtube.com/watch?v=yjqYlocRCzI
+https://www.youtube.com/watch?v=cky2pJ81G6I
